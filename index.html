@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/main.css" />
+    <title>Document</title>
+  </head>
+  <body class="font-iransans">
+    <!-- menu -->
+    <header
+      class="w-full mobile:h-[140px] tablet:h-[160px] bg-[#89986D] flex mobile:flex-col tablet:flex-col"
+    >
+      <!-- menu logo -->
+      <div
+        class="mobile:w-full mobile:h-[100px] tablet:h-[100px] flex mobile:justify-center tablet:justify-center"
+      >
+        <img src="./src/img/logo-fr.png" alt="" />
+      </div>
+      <!-- menu item -->
+      <div class="mobile:w-full mobile:h-[40px] tablet:w-full tablet:h-[60px]">
+        <!-- hamburger icon -->
+        <div
+          class="mobile:w-8 mobile:h-8 mobile:mt-1 mobile:mr-4 tablet:hidden desktop:hidden"
+        >
+          <label for="open">
+            <svg
+              viewBox="-0.5 0 25 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 12.32H22"
+                stroke="#EEEEEE"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2 18.32H22"
+                stroke="#EEEEEE"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2 6.32001H22"
+                stroke="#EEEEEE"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </label>
+        </div>
+        <input type="radio" name="menu" id="open" class="peer/open hidden" />
+        <!-- hamburger menu -->
+        <input type="radio" name="menu" id="close" class="peer/close hidden" />
+        <div
+          class="w-full bg-[#89986D] hidden peer-checked/open:block peer-checked/close:hidden"
+        >
+          <!-- close icon -->
+          <div class="w-8 h-8">
+            <label for="close">
+              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <style>
+                    .cls-1 {
+                      fill: none;
+                      stroke: #eeeeee;
+                      stroke-linecap: round;
+                      stroke-linejoin: round;
+                      stroke-width: 2px;
+                    }
+                  </style>
+                </defs>
+                <title />
+                <g id="cross">
+                  <line class="cls-1" x1="7" x2="25" y1="7" y2="25" />
+                  <line class="cls-1" x1="7" x2="25" y1="25" y2="7" />
+                </g>
+              </svg>
+            </label>
+          </div>
+          <!-- hamburger items -->
+          <div class="flex flex-col gap-5">
+            <a href="#" class="text-[#F6F0D7] p-3 mr-4">صفحه اصلی</a>
+            <a href="#" class="text-[#F6F0D7] p-3 mr-4">شرکت گلستان</a>
+            <a href="#" class="text-[#F6F0D7] p-3 mr-4">محصولات</a>
+            <a href="#" class="text-[#F6F0D7] p-3 mr-4">وبلاگ</a>
+            <a href="#" class="text-[#F6F0D7] p-3 mr-4">استخدام</a>
+            <a href="#" class="text-[#F6F0D7] p-3 mr-4">تماس با ما</a>
+            <button class="self-end text-[#F6F0D7] p-3 mr-4">Dark</button>
+          </div>
+        </div>
+        <!-- tablet menu -->
+        <div class="hidden tablet:flex tablet:justify-between tablet:items-center">
+          <ul class="flex">
+            <li>
+              <a href="#" class="text-[#F6F0D7] p-3 mr-4 block">صفحه اصلی</a>
+            </li>
+            <li class="relative group">
+              <a href="#" class="text-[#F6F0D7] p-3 mr-4 block ">شرکت گلستان</a>
+              <ul class="absolute flex flex-col gap-8 right-0 w-40 mt-2 bg-[#89986D] rounded-lg shadow-2xl items-center text-[#F6F0D7] translate-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300
+              ">
+                <li><a href="#">معرفی شرکت</a></li>
+                <li><a href="#">تاریخچه گلستان</a></li>
+                <li><a href="#">اخبار و اطلاعیه ها</a></li>
+                <li><a href="#">سازمان فروش</a></li>
+                <li><a href="#">سازمان توزیع</a></li>
+                <li><a href="#">برند ها</a></li>
+              </ul>
+            </li>
+            <li class="relative group">
+              <a href="#" class="text-[#F6F0D7] p-3 mr-4 block">محصولات</a>
+              <ul class="absolute flex flex-col gap-8 right-0 w-40 mt-2 bg-[#89986D] rounded-lg shadow-2xl items-center text-[#F6F0D7] translate-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300
+              ">
+                <li><a href="#">چای</a></li>
+                <li><a href="#">ناتس</a></li>
+                <li><a href="#">ادویه و چاشنی</a></li>
+                <li><a href="#">برنج</a></li>
+                <li><a href="#">زعفران و زرشک</a></li>
+                <li><a href="#">دمنوش</a></li>
+                <li><a href="#">حبوبات و غلات</a></li>
+                <li><a href="#">قند و شکر</a></li>
+                <li><a href="#">هاتی نودل</a></li>
+                <li><a href="#">سایر</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="text-[#F6F0D7] p-3 mr-4 block">وبلاگ</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#F6F0D7] p-3 mr-4 block">استخدام</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#F6F0D7] p-3 mr-4 block">تماس با ما</a>
+            </li>
+            <li>
+              <button class="text-[#F6F0D7] p-3 mr-4 block">Dark</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>
