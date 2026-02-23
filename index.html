@@ -19,27 +19,28 @@
         <div class="hamburger-icon">
           <label for="open">
             <svg
+              class="text-[#191A19] dark:text-[#D8E9A8]"
               viewBox="-0.5 0 25 25"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 d="M2 12.32H22"
-                stroke="#191A19"
+                stroke="currentColor"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
               <path
                 d="M2 18.32H22"
-                stroke="#191A19"
+                stroke="currentColor"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
               <path
                 d="M2 6.32001H22"
-                stroke="#191A19"
+                stroke="currentColor"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -54,12 +55,16 @@
           <!-- close icon -->
           <div class="w-8 h-8">
             <label for="close">
-              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                class="text-[#191A19] dark:text-[#D8E9A8]"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <defs>
                   <style>
                     .cls-1 {
                       fill: none;
-                      stroke: #191a19;
+                      stroke: currentColor;
                       stroke-linecap: round;
                       stroke-linejoin: round;
                       stroke-width: 2px;
@@ -95,9 +100,7 @@
             </li>
             <li class="relative group">
               <a href="#" class="menu-item">شرکت گلستان</a>
-              <ul
-                class="dropdown"
-              >
+              <ul class="dropdown">
                 <li><a href="#">معرفی شرکت</a></li>
                 <li><a href="#">تاریخچه گلستان</a></li>
                 <li><a href="#">اخبار و اطلاعیه ها</a></li>
@@ -108,9 +111,7 @@
             </li>
             <li class="relative group">
               <a href="#" class="menu-item">محصولات</a>
-              <ul
-                class="dropdown"
-              >
+              <ul class="dropdown">
                 <li><a href="#">چای</a></li>
                 <li><a href="#">ناتس</a></li>
                 <li><a href="#">ادویه و چاشنی</a></li>
@@ -125,9 +126,7 @@
             </li>
             <li class="relative group">
               <a href="#" class="menu-item">وبلاگ</a>
-              <ul
-                class="dropdown justify-center h-8"
-              >
+              <ul class="dropdown justify-center h-8">
                 <li><a href="#">مجله گلستان</a></li>
               </ul>
             </li>
@@ -136,16 +135,14 @@
             </li>
             <li class="relative group">
               <a href="#" class="menu-item">تماس با ما</a>
-              <ul
-                class="dropdown"
-              >
+              <ul class="dropdown">
                 <li><a href="#">دفتر مرکزی</a></li>
                 <li><a href="#">صدای مصرف کنندگان</a></li>
                 <li><a href="#">ارتباط با مشترکین</a></li>
               </ul>
             </li>
             <li>
-              <button id="darkbtn" class="dark-btn mt-3">Dark</button>
+              <button id="darkbtndesk" class="dark-btn mt-3">Dark</button>
             </li>
           </ul>
         </div>
@@ -160,6 +157,16 @@
         } else {
           document.querySelector("html").classList.remove("dark");
           darkbtn.innerHTML = "Dark";
+        }
+      });
+      let darkbtndesk = document.querySelector("#darkbtndesk");
+      darkbtndesk.addEventListener("click", () => {
+        if (darkbtndesk.innerHTML == "Dark") {
+          document.querySelector("html").classList.add("dark");
+          darkbtndesk.innerHTML = "Light";
+        } else {
+          document.querySelector("html").classList.remove("dark");
+          darkbtndesk.innerHTML = "Dark";
         }
       });
     </script>

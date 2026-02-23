@@ -15,7 +15,9 @@
 
       desktop:flex-row
       desktop:h-[100px]
-      desktop:text-[18px];
+      desktop:text-[18px]
+      
+      dark:bg-[#191A19];
   }
 
   .logo-area {
@@ -66,13 +68,17 @@
   .hamburger-menu {
     @apply hidden
     w-full 
-    bg-[#D8E9A8] 
+    bg-[#D8E9A8]
+    
+    dark:bg-[#191A19]
     peer-checked/open:block peer-checked/close:hidden;
   }
 
   .hamburger-item {
     @apply p-3 mr-4
-    text-[#191A19];
+    text-[#191A19]
+    
+    dark:text-[#D8E9A8];
   }
 
   .dark-btn {
@@ -84,6 +90,10 @@
     border border-2 border-[#191A19] rounded-lg
     cursor-pointer
     transition-all duration-300
+    
+    dark:text-[#D8E9A8]
+    dark:border-[#D8E9A8]
+
     hover:scale-110;
   }
 
@@ -92,6 +102,8 @@
     p-2 m-2 
     text-[#191A19]
     transition-all duration-300
+
+    dark:text-[#D8E9A8]
 
     hover:scale-110
   }
@@ -108,6 +120,9 @@
 
     desktop:mt-2
     desktop:translate-y-4
+
+    dark:bg-[#191A19]
+    dark:text-[#D8E9A8]
 
     group-hover:opacity-100
     group-hover:visible

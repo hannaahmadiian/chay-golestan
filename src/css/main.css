@@ -7,6 +7,8 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-black: #000;
+    --color-white: #fff;
     --spacing: 0.25rem;
     --radius-lg: 0.5rem;
     --default-transition-duration: 150ms;
@@ -180,11 +182,26 @@
   .hidden {
     display: none;
   }
+  .table {
+    display: table;
+  }
+  .h-6 {
+    height: calc(var(--spacing) * 6);
+  }
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
+  .w-6 {
+    width: calc(var(--spacing) * 6);
+  }
   .w-8 {
     width: calc(var(--spacing) * 8);
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -195,8 +212,34 @@
   .gap-5 {
     gap: calc(var(--spacing) * 5);
   }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
   .font-iransans {
     font-family: var(--font-iransans);
+  }
+  .text-\[\#191A1\] {
+    color: #191A1;
+  }
+  .text-\[\#191A19\] {
+    color: #191A19;
+  }
+  .text-\[\#191\] {
+    color: #191;
+  }
+  .text-\[\#\] {
+    color: #;
+  }
+  .text-black {
+    color: var(--color-black);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
   }
   .tablet\:flex {
     @media (width >= 768px) {
@@ -211,6 +254,46 @@
   .tablet\:justify-center {
     @media (width >= 768px) {
       justify-content: center;
+    }
+  }
+  .dark\:text-\[\#D8E9A8\] {
+    &:where(.dark, .dark *) {
+      color: #D8E9A8;
+    }
+  }
+  .dark\:text-\[\#D8E9A\] {
+    &:where(.dark, .dark *) {
+      color: #D8E9A;
+    }
+  }
+  .dark\:text-\[\#D8E9\] {
+    &:where(.dark, .dark *) {
+      color: #D8E9;
+    }
+  }
+  .dark\:text-\[\#D8E\] {
+    &:where(.dark, .dark *) {
+      color: #D8E;
+    }
+  }
+  .dark\:text-\[\#D8\] {
+    &:where(.dark, .dark *) {
+      color: #D8;
+    }
+  }
+  .dark\:text-\[\#D\] {
+    &:where(.dark, .dark *) {
+      color: #D;
+    }
+  }
+  .dark\:text-\[\#\] {
+    &:where(.dark, .dark *) {
+      color: #;
+    }
+  }
+  .dark\:text-white {
+    &:where(.dark, .dark *) {
+      color: var(--color-white);
     }
   }
 }
@@ -247,6 +330,9 @@
     }
     @media (width >= 1024px) {
       font-size: 18px;
+    }
+    &:where(.dark, .dark *) {
+      background-color: #191A19;
     }
   }
   .logo-area {
@@ -352,11 +438,17 @@
     &:is(:where(.peer\/open):checked ~ *) {
       display: block;
     }
+    &:where(.dark, .dark *) {
+      background-color: #191A19;
+    }
   }
   .hamburger-item {
     margin-right: calc(var(--spacing) * 4);
     padding: calc(var(--spacing) * 3);
     color: #191A19;
+    &:where(.dark, .dark *) {
+      color: #D8E9A8;
+    }
   }
   .dark-btn {
     display: block;
@@ -385,6 +477,12 @@
         scale: var(--tw-scale-x) var(--tw-scale-y);
       }
     }
+    &:where(.dark, .dark *) {
+      border-color: #D8E9A8;
+    }
+    &:where(.dark, .dark *) {
+      color: #D8E9A8;
+    }
   }
   .menu-item {
     margin: calc(var(--spacing) * 2);
@@ -403,6 +501,9 @@
         --tw-scale-z: 110%;
         scale: var(--tw-scale-x) var(--tw-scale-y);
       }
+    }
+    &:where(.dark, .dark *) {
+      color: #D8E9A8;
     }
   }
   .dropdown {
@@ -459,6 +560,12 @@
         }
       }
     }
+    &:where(.dark, .dark *) {
+      background-color: #191A19;
+    }
+    &:where(.dark, .dark *) {
+      color: #D8E9A8;
+    }
   }
 }
 @font-face {
@@ -467,6 +574,11 @@
   src: url("../font/IRANSansWeb-Light.woff") format("woff");
 }
 @property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-outline-style {
   syntax: "*";
   inherits: false;
   initial-value: solid;
@@ -578,6 +690,7 @@
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
+      --tw-outline-style: solid;
       --tw-leading: initial;
       --tw-duration: initial;
       --tw-scale-x: 1;
