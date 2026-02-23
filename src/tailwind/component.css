@@ -1,0 +1,118 @@
+@layer components {
+  .main-header {
+    @apply flex
+      fixed z-50 
+      w-full
+      bg-[#D8E9A8]
+      
+      mobile:flex-col
+      mobile:h-[140px]
+      mobile:text-[14px]
+
+      tablet:flex-col
+      tablet:h-[160px]
+      tablet:text-[16px]
+
+      desktop:flex-row
+      desktop:h-[100px]
+      desktop:text-[18px];
+  }
+
+  .logo-area {
+    @apply flex
+
+      mobile:justify-center
+      mobile:w-full
+      mobile:h-[100px]
+
+      tablet:justify-center
+      tablet:h-[100px]
+
+      desktop:justify-end
+      desktop:relative
+      desktop:w-[30%]
+      desktop:h-[100px];
+  }
+
+  .logo-img {
+    @apply w-[170px] h-[105px] object-contain
+    
+    desktop:absolute
+    desktop:left-0
+    desktop:top-[50%];
+  }
+
+  .menu-container {
+    @apply mobile:w-full mobile:h-[40px]
+
+    tablet:w-full tablet:h-[60px]
+
+    desktop:flex
+    desktop:justify-center
+    desktop:items-center
+    desktop:w-[70%]
+    desktop:h-full;
+  }
+
+  .hamburger-icon {
+    @apply mobile:w-8 mobile:h-8
+    mobile:mt-1 mobile:mr-4
+
+    tablet:hidden
+    
+    desktop:hidden;
+  }
+
+  .hamburger-menu {
+    @apply hidden
+    w-full 
+    bg-[#D8E9A8] 
+    peer-checked/open:block peer-checked/close:hidden;
+  }
+
+  .hamburger-item {
+    @apply p-3 mr-4
+    text-[#191A19];
+  }
+
+  .dark-btn {
+    @apply block 
+    self-end
+    w-[70px] h-[30px]
+    leading-[30px]
+    text-[#191A19]
+    border border-2 border-[#191A19] rounded-lg
+    cursor-pointer
+    transition-all duration-300
+    hover:scale-110;
+  }
+
+  .menu-item {
+    @apply block
+    p-2 m-2 
+    text-[#191A19]
+    transition-all duration-300
+
+    hover:scale-110
+  }
+
+  .dropdown {
+    @apply flex flex-col items-center gap-8
+    absolute right-0
+    opacity-0 invisible
+    w-40
+    bg-[#D8E9A8] text-[#191A19]
+    rounded-b-lg shadow-2xl
+    translate-y-2
+    transition-all duration-300
+
+    desktop:mt-2
+    desktop:translate-y-4
+
+    group-hover:opacity-100
+    group-hover:visible
+    group-hover:translate-y-0
+
+    desktop:group-hover:translate-y-2
+  }
+}

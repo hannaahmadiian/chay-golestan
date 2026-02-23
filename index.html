@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="rtl">
+<html lang="en" dir="rtl" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,27 +8,15 @@
   </head>
   <body class="font-iransans">
     <!-- menu -->
-    <header
-      class="w-full fixed z-50 mobile:h-[140px] tablet:h-[160px] desktop:h-[100px] bg-[#89986D] flex mobile:flex-col tablet:flex-col desktop:flex-row"
-    >
+    <header class="main-header">
       <!-- menu logo -->
-      <div
-        class="mobile:w-full mobile:h-[100px] tablet:h-[100px] desktop:w-[30%] desktop:h-[100px] flex mobile:justify-center tablet:justify-center desktop:justify-end desktop:relative"
-      >
-        <img
-          src="./src/img/logo-fr.png"
-          alt=""
-          class="w-[170px] h-[105px] object-contain desktop:absolute desktop:left-0 desktop:top-[50%]"
-        />
+      <div class="logo-area">
+        <img src="./src/img/logo-fr.png" alt="" class="logo-img" />
       </div>
       <!-- menu item -->
-      <div
-        class="mobile:w-full mobile:h-[40px] tablet:w-full tablet:h-[60px] desktop:w-[70%] desktop:h-full desktop:flex desktop:justify-center desktop:items-center"
-      >
+      <div class="menu-container">
         <!-- hamburger icon -->
-        <div
-          class="mobile:w-8 mobile:h-8 mobile:mt-1 mobile:mr-4 tablet:hidden desktop:hidden"
-        >
+        <div class="hamburger-icon">
           <label for="open">
             <svg
               viewBox="-0.5 0 25 25"
@@ -37,21 +25,21 @@
             >
               <path
                 d="M2 12.32H22"
-                stroke="#EEEEEE"
+                stroke="#191A19"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
               <path
                 d="M2 18.32H22"
-                stroke="#EEEEEE"
+                stroke="#191A19"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
               />
               <path
                 d="M2 6.32001H22"
-                stroke="#EEEEEE"
+                stroke="#191A19"
                 stroke-width="1.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -62,9 +50,7 @@
         <input type="radio" name="menu" id="open" class="peer/open hidden" />
         <!-- hamburger menu -->
         <input type="radio" name="menu" id="close" class="peer/close hidden" />
-        <div
-          class="w-full bg-[#89986D] hidden peer-checked/open:block peer-checked/close:hidden"
-        >
+        <div class="hamburger-menu">
           <!-- close icon -->
           <div class="w-8 h-8">
             <label for="close">
@@ -73,7 +59,7 @@
                   <style>
                     .cls-1 {
                       fill: none;
-                      stroke: #eeeeee;
+                      stroke: #191a19;
                       stroke-linecap: round;
                       stroke-linejoin: round;
                       stroke-width: 2px;
@@ -90,13 +76,13 @@
           </div>
           <!-- hamburger items -->
           <div class="flex flex-col gap-5">
-            <a href="#" class="text-[#F6F0D7] p-3 mr-4">صفحه اصلی</a>
-            <a href="#" class="text-[#F6F0D7] p-3 mr-4">شرکت گلستان</a>
-            <a href="#" class="text-[#F6F0D7] p-3 mr-4">محصولات</a>
-            <a href="#" class="text-[#F6F0D7] p-3 mr-4">وبلاگ</a>
-            <a href="#" class="text-[#F6F0D7] p-3 mr-4">استخدام</a>
-            <a href="#" class="text-[#F6F0D7] p-3 mr-4">تماس با ما</a>
-            <button class="self-end text-[#F6F0D7] p-3 mr-4">Dark</button>
+            <a href="#" class="hamburger-item">صفحه اصلی</a>
+            <a href="#" class="hamburger-item">شرکت گلستان</a>
+            <a href="#" class="hamburger-item">محصولات</a>
+            <a href="#" class="hamburger-item">وبلاگ</a>
+            <a href="#" class="hamburger-item">استخدام</a>
+            <a href="#" class="hamburger-item">تماس با ما</a>
+            <button id="darkbtn" class="dark-btn mb-1">Dark</button>
           </div>
         </div>
         <!-- tablet menu -->
@@ -105,12 +91,12 @@
         >
           <ul class="flex">
             <li>
-              <a href="#" class="p-2 m-2 text-[#F6F0D7] block">صفحه اصلی</a>
+              <a href="#" class="menu-item">صفحه اصلی</a>
             </li>
             <li class="relative group">
-              <a href="#" class="p-2 m-2 text-[#F6F0D7] block">شرکت گلستان</a>
+              <a href="#" class="menu-item">شرکت گلستان</a>
               <ul
-                class="flex flex-col items-center gap-8 absolute right-0 desktop:mt-2 w-40 bg-[#89986D] text-[#F6F0D7] rounded-lg shadow-2xl opacity-0 invisible translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 desktop:translate-y-4 desktop:group-hover:translate-y-2"
+                class="dropdown"
               >
                 <li><a href="#">معرفی شرکت</a></li>
                 <li><a href="#">تاریخچه گلستان</a></li>
@@ -121,9 +107,9 @@
               </ul>
             </li>
             <li class="relative group">
-              <a href="#" class="p-2 m-2 text-[#F6F0D7] block">محصولات</a>
+              <a href="#" class="menu-item">محصولات</a>
               <ul
-                class="flex flex-col items-center gap-8 absolute right-0 desktop:mt-2 w-40 bg-[#89986D] text-[#F6F0D7] rounded-lg shadow-2xl opacity-0 invisible translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 desktop:translate-y-4 desktop:group-hover:translate-y-2"
+                class="dropdown"
               >
                 <li><a href="#">چای</a></li>
                 <li><a href="#">ناتس</a></li>
@@ -138,20 +124,20 @@
               </ul>
             </li>
             <li class="relative group">
-              <a href="#" class="p-2 m-2 text-[#F6F0D7] block">وبلاگ</a>
+              <a href="#" class="menu-item">وبلاگ</a>
               <ul
-                class="flex flex-col items-center gap-8 absolute right-0 desktop:mt-2 w-40 bg-[#89986D] text-[#F6F0D7] rounded-lg shadow-2xl opacity-0 invisible translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 desktop:translate-y-4 desktop:group-hover:translate-y-2 justify-center h-8"
+                class="dropdown justify-center h-8"
               >
                 <li><a href="#">مجله گلستان</a></li>
               </ul>
             </li>
             <li>
-              <a href="#" class="p-2 m-2 text-[#F6F0D7] block">استخدام</a>
+              <a href="#" class="menu-item">استخدام</a>
             </li>
             <li class="relative group">
-              <a href="#" class="p-2 m-2 text-[#F6F0D7] block">تماس با ما</a>
+              <a href="#" class="menu-item">تماس با ما</a>
               <ul
-                class="flex flex-col items-center gap-8 absolute right-0 desktop:mt-2 w-40 bg-[#89986D] text-[#F6F0D7] rounded-lg shadow-2xl opacity-0 invisible translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 desktop:translate-y-4 desktop:group-hover:translate-y-2"
+                class="dropdown"
               >
                 <li><a href="#">دفتر مرکزی</a></li>
                 <li><a href="#">صدای مصرف کنندگان</a></li>
@@ -159,11 +145,23 @@
               </ul>
             </li>
             <li>
-              <button class="text-[#F6F0D7] p-3 mr-4 mt-1 block">Dark</button>
+              <button id="darkbtn" class="dark-btn mt-3">Dark</button>
             </li>
           </ul>
         </div>
       </div>
     </header>
+    <script>
+      let darkbtn = document.querySelector("#darkbtn");
+      darkbtn.addEventListener("click", () => {
+        if (darkbtn.innerHTML == "Dark") {
+          document.querySelector("html").classList.add("dark");
+          darkbtn.innerHTML = "Light";
+        } else {
+          document.querySelector("html").classList.remove("dark");
+          darkbtn.innerHTML = "Dark";
+        }
+      });
+    </script>
   </body>
 </html>
