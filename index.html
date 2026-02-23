@@ -9,16 +9,22 @@
   <body class="font-iransans">
     <!-- menu -->
     <header
-      class="w-full mobile:h-[140px] tablet:h-[160px] bg-[#89986D] flex mobile:flex-col tablet:flex-col"
+      class="w-full fixed z-50 mobile:h-[140px] tablet:h-[160px] desktop:h-[100px] bg-[#89986D] flex mobile:flex-col tablet:flex-col desktop:flex-row"
     >
       <!-- menu logo -->
       <div
-        class="mobile:w-full mobile:h-[100px] tablet:h-[100px] flex mobile:justify-center tablet:justify-center"
+        class="mobile:w-full mobile:h-[100px] tablet:h-[100px] desktop:w-[30%] desktop:h-[100px] flex mobile:justify-center tablet:justify-center desktop:justify-end desktop:relative"
       >
-        <img src="./src/img/logo-fr.png" alt="" />
+        <img
+          src="./src/img/logo-fr.png"
+          alt=""
+          class="w-[170px] h-[105px] object-contain desktop:absolute desktop:left-0 desktop:top-[50%]"
+        />
       </div>
       <!-- menu item -->
-      <div class="mobile:w-full mobile:h-[40px] tablet:w-full tablet:h-[60px]">
+      <div
+        class="mobile:w-full mobile:h-[40px] tablet:w-full tablet:h-[60px] desktop:w-[70%] desktop:h-full desktop:flex desktop:justify-center desktop:items-center"
+      >
         <!-- hamburger icon -->
         <div
           class="mobile:w-8 mobile:h-8 mobile:mt-1 mobile:mr-4 tablet:hidden desktop:hidden"
@@ -94,15 +100,18 @@
           </div>
         </div>
         <!-- tablet menu -->
-        <div class="hidden tablet:flex tablet:justify-between tablet:items-center">
+        <div
+          class="hidden tablet:flex tablet:justify-center tablet:items-center"
+        >
           <ul class="flex">
             <li>
-              <a href="#" class="text-[#F6F0D7] p-3 mr-4 block">صفحه اصلی</a>
+              <a href="#" class="p-2 m-2 text-[#F6F0D7] block">صفحه اصلی</a>
             </li>
             <li class="relative group">
-              <a href="#" class="text-[#F6F0D7] p-3 mr-4 block ">شرکت گلستان</a>
-              <ul class="absolute flex flex-col gap-8 right-0 w-40 mt-2 bg-[#89986D] rounded-lg shadow-2xl items-center text-[#F6F0D7] translate-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300
-              ">
+              <a href="#" class="p-2 m-2 text-[#F6F0D7] block">شرکت گلستان</a>
+              <ul
+                class="flex flex-col items-center gap-8 absolute right-0 desktop:mt-2 w-40 bg-[#89986D] text-[#F6F0D7] rounded-lg shadow-2xl opacity-0 invisible translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 desktop:translate-y-4 desktop:group-hover:translate-y-2"
+              >
                 <li><a href="#">معرفی شرکت</a></li>
                 <li><a href="#">تاریخچه گلستان</a></li>
                 <li><a href="#">اخبار و اطلاعیه ها</a></li>
@@ -112,9 +121,10 @@
               </ul>
             </li>
             <li class="relative group">
-              <a href="#" class="text-[#F6F0D7] p-3 mr-4 block">محصولات</a>
-              <ul class="absolute flex flex-col gap-8 right-0 w-40 mt-2 bg-[#89986D] rounded-lg shadow-2xl items-center text-[#F6F0D7] translate-y-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300
-              ">
+              <a href="#" class="p-2 m-2 text-[#F6F0D7] block">محصولات</a>
+              <ul
+                class="flex flex-col items-center gap-8 absolute right-0 desktop:mt-2 w-40 bg-[#89986D] text-[#F6F0D7] rounded-lg shadow-2xl opacity-0 invisible translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 desktop:translate-y-4 desktop:group-hover:translate-y-2"
+              >
                 <li><a href="#">چای</a></li>
                 <li><a href="#">ناتس</a></li>
                 <li><a href="#">ادویه و چاشنی</a></li>
@@ -127,17 +137,29 @@
                 <li><a href="#">سایر</a></li>
               </ul>
             </li>
-            <li>
-              <a href="#" class="text-[#F6F0D7] p-3 mr-4 block">وبلاگ</a>
+            <li class="relative group">
+              <a href="#" class="p-2 m-2 text-[#F6F0D7] block">وبلاگ</a>
+              <ul
+                class="flex flex-col items-center gap-8 absolute right-0 desktop:mt-2 w-40 bg-[#89986D] text-[#F6F0D7] rounded-lg shadow-2xl opacity-0 invisible translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 desktop:translate-y-4 desktop:group-hover:translate-y-2 justify-center h-8"
+              >
+                <li><a href="#">مجله گلستان</a></li>
+              </ul>
             </li>
             <li>
-              <a href="#" class="text-[#F6F0D7] p-3 mr-4 block">استخدام</a>
+              <a href="#" class="p-2 m-2 text-[#F6F0D7] block">استخدام</a>
+            </li>
+            <li class="relative group">
+              <a href="#" class="p-2 m-2 text-[#F6F0D7] block">تماس با ما</a>
+              <ul
+                class="flex flex-col items-center gap-8 absolute right-0 desktop:mt-2 w-40 bg-[#89986D] text-[#F6F0D7] rounded-lg shadow-2xl opacity-0 invisible translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 desktop:translate-y-4 desktop:group-hover:translate-y-2"
+              >
+                <li><a href="#">دفتر مرکزی</a></li>
+                <li><a href="#">صدای مصرف کنندگان</a></li>
+                <li><a href="#">ارتباط با مشترکین</a></li>
+              </ul>
             </li>
             <li>
-              <a href="#" class="text-[#F6F0D7] p-3 mr-4 block">تماس با ما</a>
-            </li>
-            <li>
-              <button class="text-[#F6F0D7] p-3 mr-4 block">Dark</button>
+              <button class="text-[#F6F0D7] p-3 mr-4 mt-1 block">Dark</button>
             </li>
           </ul>
         </div>
