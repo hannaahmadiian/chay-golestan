@@ -7,6 +7,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-500: oklch(63.7% 0.237 25.331);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -182,26 +183,11 @@
   .hidden {
     display: none;
   }
-  .table {
-    display: table;
-  }
-  .h-6 {
-    height: calc(var(--spacing) * 6);
-  }
   .h-8 {
     height: calc(var(--spacing) * 8);
   }
-  .w-6 {
-    width: calc(var(--spacing) * 6);
-  }
   .w-8 {
     width: calc(var(--spacing) * 8);
-  }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .resize {
-    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -212,34 +198,11 @@
   .gap-5 {
     gap: calc(var(--spacing) * 5);
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
   .font-iransans {
     font-family: var(--font-iransans);
   }
-  .text-\[\#191A1\] {
-    color: #191A1;
-  }
   .text-\[\#191A19\] {
     color: #191A19;
-  }
-  .text-\[\#191\] {
-    color: #191;
-  }
-  .text-\[\#\] {
-    color: #;
-  }
-  .text-black {
-    color: var(--color-black);
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .tablet\:flex {
     @media (width >= 768px) {
@@ -261,58 +224,17 @@
       color: #D8E9A8;
     }
   }
-  .dark\:text-\[\#D8E9A\] {
-    &:where(.dark, .dark *) {
-      color: #D8E9A;
-    }
-  }
-  .dark\:text-\[\#D8E9\] {
-    &:where(.dark, .dark *) {
-      color: #D8E9;
-    }
-  }
-  .dark\:text-\[\#D8E\] {
-    &:where(.dark, .dark *) {
-      color: #D8E;
-    }
-  }
-  .dark\:text-\[\#D8\] {
-    &:where(.dark, .dark *) {
-      color: #D8;
-    }
-  }
-  .dark\:text-\[\#D\] {
-    &:where(.dark, .dark *) {
-      color: #D;
-    }
-  }
-  .dark\:text-\[\#\] {
-    &:where(.dark, .dark *) {
-      color: #;
-    }
-  }
-  .dark\:text-white {
-    &:where(.dark, .dark *) {
-      color: var(--color-white);
-    }
-  }
 }
 @layer components {
   .main-header {
     position: fixed;
     z-index: 50;
     display: flex;
+    height: 140px;
     width: 100%;
+    flex-direction: column;
     background-color: #D8E9A8;
-    @media (width >= 640px) {
-      height: 140px;
-    }
-    @media (width >= 640px) {
-      flex-direction: column;
-    }
-    @media (width >= 640px) {
-      font-size: 14px;
-    }
+    font-size: 14px;
     @media (width >= 768px) {
       height: 160px;
     }
@@ -337,26 +259,11 @@
   }
   .logo-area {
     display: flex;
-    @media (width >= 640px) {
-      height: 100px;
-    }
-    @media (width >= 640px) {
-      width: 100%;
-    }
-    @media (width >= 640px) {
-      justify-content: center;
-    }
-    @media (width >= 768px) {
-      height: 100px;
-    }
-    @media (width >= 768px) {
-      justify-content: center;
-    }
+    height: 100px;
+    width: 100%;
+    justify-content: center;
     @media (width >= 1024px) {
       position: relative;
-    }
-    @media (width >= 1024px) {
-      height: 100px;
     }
     @media (width >= 1024px) {
       width: 30%;
@@ -380,12 +287,8 @@
     }
   }
   .menu-container {
-    @media (width >= 640px) {
-      height: 40px;
-    }
-    @media (width >= 640px) {
-      width: 100%;
-    }
+    height: 40px;
+    width: 100%;
     @media (width >= 768px) {
       height: 60px;
     }
@@ -409,18 +312,10 @@
     }
   }
   .hamburger-icon {
-    @media (width >= 640px) {
-      margin-top: calc(var(--spacing) * 1);
-    }
-    @media (width >= 640px) {
-      margin-right: calc(var(--spacing) * 4);
-    }
-    @media (width >= 640px) {
-      height: calc(var(--spacing) * 8);
-    }
-    @media (width >= 640px) {
-      width: calc(var(--spacing) * 8);
-    }
+    margin-top: calc(var(--spacing) * 1);
+    margin-right: calc(var(--spacing) * 4);
+    height: calc(var(--spacing) * 8);
+    width: calc(var(--spacing) * 8);
     @media (width >= 768px) {
       display: none;
     }
@@ -567,6 +462,140 @@
       color: #D8E9A8;
     }
   }
+  .main-page {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    --tw-gradient-position: to right;
+    @supports (background-image: linear-gradient(in lab, red, red)) {
+      --tw-gradient-position: to right in oklab;
+    }
+    background-image: linear-gradient(var(--tw-gradient-stops));
+    --tw-gradient-from: #ffffff;
+    --tw-gradient-to: #cdcdcd;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+    padding-top: 140px;
+    @media (width >= 768px) {
+      flex-direction: row;
+    }
+    &:where(.dark, .dark *) {
+      --tw-gradient-position: to right;
+      @supports (background-image: linear-gradient(in lab, red, red)) {
+        --tw-gradient-position: to right in oklab;
+      }
+      background-image: linear-gradient(var(--tw-gradient-stops));
+    }
+    &:where(.dark, .dark *) {
+      --tw-gradient-from: #D1D4C9;
+      --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+    }
+    &:where(.dark, .dark *) {
+      --tw-gradient-to: #40513B;
+      --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+    }
+  }
+  .main-page-text {
+    width: 100%;
+    @media (width >= 768px) {
+      width: 50%;
+    }
+    @media (width >= 1024px) {
+      width: 60%;
+    }
+  }
+  .container-text {
+    margin-inline: auto;
+    margin-top: calc(var(--spacing) * 4);
+    width: 90%;
+    padding: calc(var(--spacing) * 4);
+    @media (width >= 768px) {
+      margin-top: calc(var(--spacing) * 16);
+    }
+    @media (width >= 1024px) {
+      width: 60%;
+    }
+  }
+  .text-main-title {
+    font-size: 20px;
+    color: #8C1007;
+    &:where(.dark, .dark *) {
+      color: #ff0000;
+    }
+  }
+  .text-title {
+    margin-top: calc(var(--spacing) * 4);
+    font-size: 18px;
+    color: #3a3a3a;
+    &:where(.dark, .dark *) {
+      color: var(--color-black);
+    }
+  }
+  .text-paragraph {
+    margin-top: calc(var(--spacing) * 4);
+    text-align: justify;
+    font-size: 16px;
+    --tw-leading: calc(var(--spacing) * 7);
+    line-height: calc(var(--spacing) * 7);
+    color: #898989;
+    &:where(.dark, .dark *) {
+      &:where(.dark, .dark *) {
+        color: #F0FFDF;
+      }
+    }
+  }
+  .text-btn {
+    margin-top: 34px;
+    display: inline-block;
+    height: 40px;
+    width: 130px;
+    border-radius: var(--radius-lg);
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-color: #c6c6c6;
+    background-color: #fff;
+    text-align: center;
+    font-size: 16px;
+    --tw-leading: 40px;
+    line-height: 40px;
+    color: #4a4a4a;
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-red-500);
+      }
+    }
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
+      }
+    }
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          background-color: #8C1007;
+        }
+      }
+    }
+  }
+  .container-img {
+    margin-top: 70px;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    @media (width >= 768px) {
+      width: 50%;
+    }
+  }
+  .main-page-img {
+    display: block;
+    height: 400px;
+    width: 350px;
+    object-fit: contain;
+  }
 }
 @font-face {
   font-family: "iransans";
@@ -574,11 +603,6 @@
   src: url("../font/IRANSansWeb-Light.woff") format("woff");
 }
 @property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@property --tw-outline-style {
   syntax: "*";
   inherits: false;
   initial-value: solid;
@@ -686,11 +710,52 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-gradient-position {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-via {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-to {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #0000;
+}
+@property --tw-gradient-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-via-stops {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-gradient-from-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --tw-gradient-via-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+@property --tw-gradient-to-position {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
-      --tw-outline-style: solid;
       --tw-leading: initial;
       --tw-duration: initial;
       --tw-scale-x: 1;
@@ -713,6 +778,15 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-gradient-position: initial;
+      --tw-gradient-from: #0000;
+      --tw-gradient-via: #0000;
+      --tw-gradient-to: #0000;
+      --tw-gradient-stops: initial;
+      --tw-gradient-via-stops: initial;
+      --tw-gradient-from-position: 0%;
+      --tw-gradient-via-position: 50%;
+      --tw-gradient-to-position: 100%;
     }
   }
 }

@@ -1,13 +1,12 @@
 @layer components {
+  /* !!!header!!! */
   .main-header {
-    @apply flex
+    @apply flex flex-col
       fixed z-50 
-      w-full
+      w-full h-[140px]
       bg-[#D8E9A8]
+      text-[14px]
       
-      mobile:flex-col
-      mobile:h-[140px]
-      mobile:text-[14px]
 
       tablet:flex-col
       tablet:h-[160px]
@@ -21,19 +20,12 @@
   }
 
   .logo-area {
-    @apply flex
-
-      mobile:justify-center
-      mobile:w-full
-      mobile:h-[100px]
-
-      tablet:justify-center
-      tablet:h-[100px]
+    @apply flex justify-center
+      w-full h-[100px]
 
       desktop:justify-end
       desktop:relative
-      desktop:w-[30%]
-      desktop:h-[100px];
+      desktop:w-[30%];
   }
 
   .logo-img {
@@ -45,7 +37,7 @@
   }
 
   .menu-container {
-    @apply mobile:w-full mobile:h-[40px]
+    @apply w-full h-[40px]
 
     tablet:w-full tablet:h-[60px]
 
@@ -57,8 +49,8 @@
   }
 
   .hamburger-icon {
-    @apply mobile:w-8 mobile:h-8
-    mobile:mt-1 mobile:mr-4
+    @apply w-8 h-8
+    mt-1 mr-4
 
     tablet:hidden
     
@@ -105,7 +97,7 @@
 
     dark:text-[#D8E9A8]
 
-    hover:scale-110
+    hover:scale-110;
   }
 
   .dropdown {
@@ -128,6 +120,82 @@
     group-hover:visible
     group-hover:translate-y-0
 
-    desktop:group-hover:translate-y-2
+    desktop:group-hover:translate-y-2;
+  }
+  /* !!!main page!!! */
+
+  .main-page {
+    @apply flex flex-col
+    w-full
+    pt-[140px]
+    bg-linear-to-r from-[#ffffff] to-[#cdcdcd]
+    
+    tablet:flex-row
+    
+    dark:bg-linear-to-r dark:from-[#D1D4C9] dark:to-[#40513B];
+  }
+
+  .main-page-text {
+    @apply w-full
+    tablet:w-[50%]
+    
+    desktop:w-[60%];
+  }
+
+  .container-text {
+    @apply w-[90%]
+    mx-auto mt-4 p-4
+
+    tablet:mt-16
+    desktop:w-[60%];
+  }
+
+  .text-main-title {
+    @apply text-[20px] text-[#8C1007]
+    
+    dark:text-[#ff0000];
+  }
+
+  .text-title {
+    @apply mt-4
+    text-[18px] text-[#3a3a3a]
+    
+    dark:text-black;
+  }
+
+  .text-paragraph {
+    @apply text-justify
+    mt-4 leading-7
+    text-[16px] text-[#898989]
+
+    dark:dark:text-[#F0FFDF];
+  }
+
+  .text-btn {
+    @apply inline-block
+    leading-[40px] mt-[34px]
+    w-[130px] h-[40px]
+    bg-[#fff]
+    text-center text-[16px] text-[#4a4a4a]
+    border-[1px] border-[#c6c6c6] rounded-lg
+    transition-all duration-300
+    
+    
+    hover:bg-red-500 hover:text-white
+    
+    dark:hover:bg-[#8C1007] ;
+  }
+
+  .container-img {
+    @apply flex justify-start
+    w-full
+    mt-[70px]
+    
+    tablet:w-[50%];
+  }
+
+  .main-page-img {
+    @apply block
+    w-[350px] h-[400px] object-contain;
   }
 }
