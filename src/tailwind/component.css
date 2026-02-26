@@ -132,7 +132,7 @@
     
     tablet:flex-row
     
-    dark:bg-linear-to-r dark:from-[#D1D4C9] dark:to-[#40513B];
+    dark:bg-linear-to-l dark:from-[#D1D4C9] dark:to-[#40513B];
   }
 
   .main-page-text {
@@ -153,7 +153,7 @@
   .text-main-title {
     @apply text-[20px] text-[#8C1007]
     
-    dark:text-[#ff0000];
+    dark:text-[#b91c1c];
   }
 
   .text-title {
@@ -168,7 +168,7 @@
     mt-4 leading-7
     text-[16px] text-[#898989]
 
-    dark:dark:text-[#F0FFDF];
+    dark:dark:text-[#2B2B2B];
   }
 
   .text-btn {
@@ -183,7 +183,7 @@
     
     hover:bg-red-500 hover:text-white
     
-    dark:hover:bg-[#8C1007] ;
+    dark:hover:bg-[#b91c1c];
   }
 
   .container-img {
@@ -197,5 +197,85 @@
   .main-page-img {
     @apply block
     w-[350px] h-[400px] object-contain;
+  }
+
+  .golestan-intro {
+    @apply w-full
+    p-1 mt-2
+    
+    tablet:border-t tablet:border-[#7A7A7A];
+  }
+
+  .intro-container {
+    @apply w-full
+    desktop:w-[40%] desktop:mx-auto;
+  }
+
+  .intro-title {
+    @apply mt-[25px] p-4
+    font-bold text-[20px] text-red-500
+
+    dark:text-red-600;
+  }
+
+  .intro-text {
+    @apply p-2
+    text-[16px] leading-8 text-justify text-[#7A7A7A]
+    
+    dark:dark:text-[#f1f5f4];
+  }
+
+  /* !!!stats section!!! */
+  .stats-class {
+    @apply hidden
+    tablet:block tablet:mt-[120px] tablet:mb-8;
+  }
+
+  .stat-container {
+    @apply flex flex-row-reverse justify-center gap-6
+    w-[90%] mx-auto
+    desktop:w-[80%];
+  }
+
+  .stats {
+    @apply shadow-xl
+    dark:shadow-[0_1px_4px_white];
+  }
+
+  .img-container {
+    @apply relative
+    overflow-hidden
+  }
+
+  .img-stats {
+    @apply block
+    w-full h-full object-contain
+  }
+
+  .img-overlay {
+    @apply absolute inset-0
+    bg-black/60
+    opacity-0
+    scale-y-0
+    origin-bottom
+    transition-all duration-300 ease-in-out
+    z-10
+    group-hover:opacity-100
+    group-hover:scale-y-100
+
+    dark:bg-white/60
+  }
+
+  .img-content {
+    @apply absolute top-[50%] left-[50%]
+    translate-x-[-50%]
+    translate-y-[-50%]
+    text-center text-white
+    opacity-0
+    z-20
+    transition ease-in-out duration-300
+    group-hover:opacity-100
+
+    dark:text-black
   }
 }
