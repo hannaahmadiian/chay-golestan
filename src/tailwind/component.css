@@ -456,12 +456,10 @@
   }
 
   .main-footer {
-    @apply flex flex-col items-center 
-    bg-[#D8E9A8] 
-    
-    tablet:flex-row tablet:justify-around
+    @apply flex flex-col items-center
+    bg-[#191A19]
 
-    dark:bg-[#191A19];
+    tablet:flex-row tablet:justify-around;
   }
 
   .footer-item {

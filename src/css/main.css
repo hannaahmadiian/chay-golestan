@@ -1054,15 +1054,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #D8E9A8;
+    background-color: #191A19;
     @media (width >= 768px) {
       flex-direction: row;
     }
     @media (width >= 768px) {
       justify-content: space-around;
-    }
-    &:where(.dark, .dark *) {
-      background-color: #191A19;
     }
   }
   .footer-item {
